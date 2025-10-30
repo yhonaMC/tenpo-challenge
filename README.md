@@ -1,4 +1,4 @@
-# Tenpo - Academic Explorer
+# Tenpo 
 
 Una aplicación web moderna construida con React, Vite, TypeScript y TailwindCSS que permite explorar publicaciones académicas de OpenAlex.
 
