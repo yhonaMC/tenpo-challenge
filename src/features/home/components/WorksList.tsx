@@ -1,7 +1,11 @@
 import React from 'react'
 import { UserCard } from './WorkCard'
 import { UserCardSkeleton } from './UserCardSkeleton'
-import { useInfiniteUsers, useAutoLoadMore, flattenUsers } from '@/features/home/hooks/useWorks'
+import {
+  useInfiniteUsers,
+  useAutoLoadMore,
+  flattenUsers
+} from '@/features/home/hooks/useWorks'
 
 export const WorksList: React.FC = () => {
   const {
@@ -11,10 +15,14 @@ export const WorksList: React.FC = () => {
     error,
     fetchNextPage,
     hasNextPage,
-    isFetchingNextPage,
+    isFetchingNextPage
   } = useInfiniteUsers()
 
-  const loadMoreRef = useAutoLoadMore(fetchNextPage, hasNextPage, isFetchingNextPage)
+  const loadMoreRef = useAutoLoadMore(
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage
+  )
 
   if (isLoading) {
     return (
@@ -85,7 +93,6 @@ export const WorksList: React.FC = () => {
           ))}
         </div>
 
-        {/* Trigger para infinite scroll */}
         {hasNextPage && (
           <div ref={loadMoreRef} className="py-8">
             {isFetchingNextPage ? (
